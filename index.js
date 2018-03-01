@@ -1,78 +1,95 @@
 // Rachelle Pestanas & Brett Sullivan
-const redBlock = document.getElementsByClassName("block--red")[0];
-const blueBlock = document.getElementsByClassName("block--blue")[0];
-const greenBlock = document.getElementsByClassName("block--green")[0];
-const pinkBlock = document.getElementsByClassName("block--pink")[0];
-const grayBlock = document.getElementsByClassName("block--gray")[0];
-const blockParent = document.getElementsByClassName("blocks")[0];
-document.getElementsByClassName("blocks")[0].style.width = "100%";
+
+const column = document.getElementsByClassName("blocks");
+const r = document.getElementsByClassName("block--red")[0];
+const b = document.getElementsByClassName("block--blue")[0];
+const gre = document.getElementsByClassName("block--green")[0];
+const p = document.getElementsByClassName("block--pink")[0];
+const gra = document.querySelector("block--gray");
 
 
-blockParent.style.width = "100%"; 
+r.addEventListener("click", (event) => {
+    r.style.order = -1;
+    b.style.order = 0;
+    gre.style.order = 0;
+    p.style.order = 0;
+    gra.style.order = 0;
+})
 
-blockParent.addEventListener("mousedown", (event) =>{
-    function slide(blockX){
-       
-            blockX.style.alignSelf = "center";
+b.addEventListener("click", (event) =>{
+    r.style.order = 0;
+    b.style.order = -1;
+    gre.style.order = 0;
+    p.style.order = 0;
+    gra.style.order = 0;
 
-            setTimeout(function() {
-                blockX.style.alignSelf = "flex-end";
-            }, 1000)
-
-            
-    }
-
-    redBlock.addEventListener("mousedown", (event) => {
-        slide(redBlock);
-    })
-
-    blueBlock.addEventListener("mousedown", (event) => {
-        slide(blueBlock);
-    })
-
-    greenBlock.addEventListener("mousedown", (event) => {
-        slide(greenBlock);
-    })
-    pinkBlock.addEventListener("mousedown", (event) => {
-        slide(pinkBlock);
-    })
-    grayBlock.addEventListener("mousedown", (event) => {
-        slide(grayBlock);
-    })
-
-} )
-
-blockParent.addEventListener("mouseup", (event) => {
-    function unSlide(blockY){
-        blockY.style.alignSelf = "center";
-
-        // setTimeout(function() {
-        //     blockX.style.alignSelf = "flex-start"
-        // }, 5000)
-    }
-
-    redBlock.addEventListener("mouseup", (event) => {
-        unSlide(redBlock);
-    })
-
-    blueBlock.addEventListener("mouseup", (event) => {
-        unSlide(blueBlock);
-    })
-
-    greenBlock.addEventListener("mouseup", (event) => {
-        unSlide(greenBlock);
-    })
-    pinkBlock.addEventListener("mouseup", (event) => {
-        unSlide(pinkBlock);
-    })
-    grayBlock.addEventListener("mouseup", (event) => {
-        unSlide(grayBlock);
-    })
 })
 
 
-// slide(redBlock);
-// slide(blueBlock);
-// redBlock.addEventListener("mousedown", (event) =>{
-//     redBlock.style.alignSelf = "center";
+gre.addEventListener("click", (event) =>{
+    r.style.order = 0;
+    b.style.order = 0;
+    gre.style.order = -1;
+    p.style.order = 0;
+    gra.style.order = 0;
+
+})
+
+p.addEventListener("click", (event) =>{
+    r.style.order = 0;
+    b.style.order = 0;
+    gre.style.order = 0;
+    p.style.order = -1;
+    gra.style.order = 0;
+
+})
+
+gra.addEventListener("click", (event) =>{
+    r.style.order = 0;
+    b.style.order = 0;
+    gre.style.order = 0;
+    p.style.order = 0;
+    gra.style.order = -1;
+
+})
+// column.addEventListener("click", (event) => {
+
+//     function eventTarget(blockClass) {
+//         if(event.target.id === blockClass){
+//             blockClass.style.order = "-1";
+//         }
+//     }
+
+//     eventTarget(r);
+//     eventTarget(b);
+//     eventTarget(gre);
+//     eventTarget(p);
+//     eventTarget(gra);
+
+    
 // })
+
+// column.addEventListener("click", (event) => {
+//     if(event.target === "b"){
+//         event.style.order = -1;
+//     }
+// })
+
+
+
+// b.addEventListener("click", (event) => {
+
+//     // function eventTarget(blockClass) {
+//     //     if(event.target.id === blockClass){
+//     //         blockClass.style.order = "-1";
+//     //     }
+//     // }
+
+//     // eventTarget(b);
+
+//     event.order = -1;
+
+// })
+
+
+
